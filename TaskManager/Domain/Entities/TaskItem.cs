@@ -14,7 +14,7 @@ namespace TaskManager.Domain.Entities
         private string title="";
         public string Title { get { return title; } private set { if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Заголовок не может быть пустым", nameof(value)); title = value; } }
         private string description;
-        public string Description { get { return description} private set { description = value ?? string.Empty; } }
+        public string Description { get { return description; } private set { description = value ?? string.Empty; } }
         private int priority;
         public int Priority { get { return priority; } private set { if (value < 1 || value > 5) throw new ArgumentOutOfRangeException("Приоритет должен быть в диапазоне от 1 до 5", value, nameof(value)); priority = value; } }
         public  TaskStatus Status { get; private set; }
